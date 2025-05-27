@@ -4,82 +4,59 @@
   <meta charset="UTF-8" />
   <title>Giới Thiệu Sách - Book Store</title>
   <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/books.css" />
+  <link rel="stylesheet" href="css/books-detail.css" />
 </head>
 <body>
 <header>
   <div class="container">
     <h1 class="logo">Book Store</h1>
     <nav>
-        <ul>
-          <li><a href="index.html" class="active">Trang Chủ</a></li>
-          <li><a href="books.html">Giới Thiệu Sách</a></li>
-          <li><a href="info.html">Mua Sách</a></li>
-          <li><a href="contact.html">Liên Hệ</a></li>
-          <li class="cart-icon">
-            <a href="cart.html">🛒 Giỏ hàng (<span id="cart-count">0</span>)</a>
-          </li>
-
-          <!-- Hiển thị sau khi đăng nhập -->
-          <li id="user-info" style="display: none;">
-            <img id="user-avatar" src="ay.jpg" alt="avatar">
-            <span id="username"></span>
-            <button id="logout-btn">(Đăng xuất)</button>
-          </li>
-
-          <!-- Hiển thị khi chưa đăng nhập -->
-          <li id="login-link"><a href="login.html">Đăng nhập</a></li>
-        </ul>
-      </nav>
-
+      <ul>
+        <li><a href="index.html">Trang Chủ</a></li>
+        <li><a href="books.html" class="active">Giới Thiệu Sách</a></li>
+        <li><a href="info.html">Mua Sách</a></li>
+        <li><a href="contact.html">Liên Hệ</a></li>
+        <li class="cart-icon">
+          <a href="cart.html">🛒 Giỏ hàng (<span id="cart-count">0</span>)</a>
+        </li>
+        <li id="user-info" style="display: none;">
+          <img id="user-avatar" src="ay.jpg" alt="avatar">
+          <span id="username"></span>
+          <button id="logout-btn">(Đăng xuất)</button>
+        </li>
+        <li id="login-link"><a href="login.html">Đăng nhập</a></li>
+      </ul>
+    </nav>
   </div>
 </header>
+
 <main class="container">
   <h2>Sách nổi bật</h2>
-  <div class="book-list">
-    <div class="book">
-      <img src="sach1.jpg" alt="Sách 1" />
-      <h3>Ái Tình Nơi Đầu Lưỡi</h3>
-      <p></p>
-      <p></p>
+
+  <div class="book-list" id="book-list">
+    <!-- Danh sách sách sẽ được tạo ra bằng JS -->
+  </div>
+
+  <!-- Panel chi tiết sách giới hạn trong vùng trắng -->
+  <div id="book-detail-panel" class="book-detail-panel" style="display:none;">
+    <div id="book-info">
+      <!-- JS sẽ thêm ảnh và mô tả tại đây -->
     </div>
-    <div class="book">
-      <img src="sach6.jpg" alt="Sách 2" />
-      <h3>Dưới Trời Xanh Không Có Anh Vẫn Mỉm Cười</h3>
-      <p></p>
-      <p></p>
+    <div id="extra-content" style="display:none;">
+      <h3>Nội dung bổ sung</h3>
+      <p>Bạn có thể thêm các đoạn văn, ghi chú hay bình luận ở đây.</p>
     </div>
-    <div class="book">
-      <img src="sach3.jpg" alt="Sách 3" />
-      <h3>Phấn Hoa Lầu Xanh</h3>
-      <p></p>
-      <p></p>
-    </div>
-    <div class="book">
-      <img src="sach4.jpg" alt="Sách 4" />
-      <h3>Mẹ Ruột Nam Chính Niên Đại</h3>
-      <p></p>
-      <p></p>
-    </div>
-    <div class="book">
-      <img src="sach 7.jpg" alt="Sách 5" />
-      <h3>Lắng Nghe Từng Hơi Thở Của Anh</h3>
-      <p></p>
-      <p></p>
-    </div>
-    <div class="book">
-      <img src="sach 8.jpg" alt="Sách 6" />
-      <h3>Bậc Thầy Trà Xanh Đến Huấn Luyện Quân Sự</h3>
-      <p></p>
-      <p></p>
-    </div>
-    <!-- Thêm nhiều sách tại đây -->
+    <button id="close-detail">← Đóng</button>
   </div>
 </main>
+
 <footer>
   <div class="container">
     <p>&copy; 2025 Book Store.</p>
   </div>
 </footer>
-<script src="js/script.js"></script>
+
+<script src="js/books.js"></script>
 </body>
 </html>

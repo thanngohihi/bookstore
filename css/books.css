@@ -1,0 +1,100 @@
+.book-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.book {
+  cursor: pointer;
+  width: 150px;
+  text-align: center;
+  border: 1px solid #ccc;
+  padding: 8px;
+  border-radius: 8px;
+  transition: transform 0.2s;
+}
+
+.book:hover {
+  transform: scale(1.05);
+}
+
+.book-detail {
+  display: flex;
+  gap: 30px;
+  margin-top: 20px;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+/* Hình ảnh chi tiết sách */
+.book-detail .book-image {
+  flex: 1 1 45%;
+  max-width: 350px;
+  min-width: 250px;
+}
+
+.book-detail .book-image img {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+  display: block;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+/* Thông tin chi tiết sách */
+.book-detail .book-info {
+  flex: 1 1 50%;
+  min-width: 250px;
+}
+
+.book-detail .book-info h3 {
+  margin-top: 0;
+  font-size: 22px;
+}
+
+.book-detail .book-info p {
+  line-height: 1.5;
+  font-size: 16px;
+  color: #444;
+}
+
+.book-detail .extra-content {
+  margin-top: 20px;
+  padding: 10px;
+  background-color: #f9f9f9;
+  border-radius: 6px;
+}
+
+.book-detail button.back-btn {
+  margin-top: 20px;
+  padding: 8px 14px;
+  background-color: #3366cc;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 15px;
+}
+
+.book-detail button.back-btn:hover {
+  background-color: #254e9b;
+}
+
+/* Responsive cho thiết bị nhỏ */
+@media (max-width: 700px) {
+  .book-detail {
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  .book-detail .book-image,
+  .book-detail .book-info {
+    flex: 1 1 100%;
+    max-width: 100%;
+    min-width: auto;
+  }
+}
