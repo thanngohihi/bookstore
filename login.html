@@ -1,0 +1,56 @@
+<!-- login.html -->
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Đăng nhập - Book Store</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <header>
+    <div class="container">
+      <h1 class="logo">Book Store</h1>
+      <nav>
+        <ul>
+          <li><a href="index.html">Trang Chủ</a></li>
+          <li><a href="books.html">Giới Thiệu Sách</a></li>
+          <li><a href="info.html">Mua Sách</a></li>
+          <li><a href="contact.html">Liên Hệ</a></li>
+          <li class="cart-icon">
+            <a href="cart.html">🛒 Giỏ hàng (<span id="cart-count">0</span>)</a>
+          </li>
+          <li><a href="login.html" class="active">Đăng nhập</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container" style="max-width: 400px; margin: 50px auto;">
+    <h2>Đăng nhập</h2>
+    <form id="loginForm" style="display: flex; flex-direction: column; gap: 1rem;">
+      <label for="email">Email hoặc Tên đăng nhập</label>
+      <input type="text" id="email" name="email" required style="padding: 0.7rem; border: 1px solid #ddd; border-radius: 6px;" />
+
+      <label for="password">Mật khẩu</label>
+      <input type="password" id="password" name="password" required style="padding: 0.7rem; border: 1px solid #ddd; border-radius: 6px;" />
+
+      <button type="submit" style="padding: 0.7rem; background-color: #1abc9c; color: white; border: none; border-radius: 6px; cursor: pointer;">
+        Đăng nhập
+      </button>
+    </form>
+
+    <p style="margin-top: 1rem;">
+      Chưa có tài khoản? <a href="register.html">Đăng ký</a>
+    </p>
+  </main>
+
+  <footer>
+    <div class="container">
+      <p>&copy; 2025 Book Store.</p>
+    </div>
+  </footer>
+
+  <script src="js/login.js"></script>
+</body>
+</html>

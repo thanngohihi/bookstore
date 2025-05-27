@@ -109,3 +109,46 @@ document.addEventListener("DOMContentLoaded", () => {
     cart.renderCartList();
   }
 });
+document.addEventListener('DOMContentLoaded', () => {
+  const currentPath = window.location.pathname.split('/').pop(); // lấy file hiện tại
+  const navLinks = document.querySelectorAll('nav a');
+
+  navLinks.forEach(link => {
+    const href = link.getAttribute('href');
+    if (href === currentPath) {
+      link.classList.add('active');
+    } else {
+      link.classList.remove('active');
+    }
+  });
+});
+window.addEventListener("DOMContentLoaded", () => {
+  const loggedInUser = localStorage.getItem("loggedInUser");
+  const userInfo = document.getElementById("user-info");
+  const loginLink = document.getElementById("login-link");
+  const usernameDisplay = document.getElementById("username");
+
+  if (loggedInUser && userInfo && usernameDisplay) {
+    userInfo.style.display = "inline-block";
+    usernameDisplay.textContent = loggedInUser;
+    loginLink.style.display = "none";
+  }
+});
+document.addEventListener("DOMContentLoaded", function () {
+  const username = localStorage.getItem("loggedInUser");
+  const userInfo = document.getElementById("user-info");
+  const usernameSpan = document.getElementById("username");
+  const logoutBtn = document.getElementById("logout-btn");
+  const loginLink = document.getElementById("login-link");
+
+  if (username) {
+    usernameSpan.textContent = username;
+    userInfo.style.display = "inline-flex";
+    loginLink.style.display = "none";
+
+    logoutBtn.addEventListener("click", function () {
+      localStorage.removeItem("loggedInUser");
+      location.reload(); // Tải lại trang để cập nhật giao diện
+    });
+  }
+});

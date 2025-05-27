@@ -3,133 +3,113 @@
 <head>
   <meta charset="UTF-8" />
   <title>Thông Tin Sách - Book Store</title>
-  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="css/style.css" />
 </head>
 <body>
 <header>
   <div class="container">
     <h1 class="logo">Book Store</h1>
     <nav>
-      <ul>
-        <li><a href="index.html">Trang Chủ</a></li>
-        <li><a href="books.html">Giới Thiệu Sách</a></li>
-        <li><a href="info.html" class="active">Mua Sách</a></li>
-        <li><a href="contact.html">Liên Hệ</a></li>
-        <li class="cart-icon">
-          <a href="cart.html">🛒 Giỏ hàng (<span id="cart-count">0</span>)</a>
-        </li>
-      </ul>
-    </nav>
+        <ul>
+          <li><a href="index.html" class="active">Trang Chủ</a></li>
+          <li><a href="books.html">Giới Thiệu Sách</a></li>
+          <li><a href="info.html">Mua Sách</a></li>
+          <li><a href="contact.html">Liên Hệ</a></li>
+          <li class="cart-icon">
+            <a href="cart.html">🛒 Giỏ hàng (<span id="cart-count">0</span>)</a>
+          </li>
+
+          <!-- Hiển thị sau khi đăng nhập -->
+          <li id="user-info" style="display: none;">
+            <img id="user-avatar" src="ay.jpg" alt="avatar">
+            <span id="username"></span>
+            <button id="logout-btn">(Đăng xuất)</button>
+          </li>
+
+          <!-- Hiển thị khi chưa đăng nhập -->
+          <li id="login-link"><a href="login.html">Đăng nhập</a></li>
+        </ul>
+      </nav>
   </div>
 </header>
 
 <main class="container">
-  <h2 style="text-align: center; margin-top: 20px;">📚 Chi Tiết Sách</h2>
+  <h2 style="text-align: center; margin-top: 20px;">📚 Danh Sách Sách</h2>
 
-<class="book-grid">
-  <div class="book-card">
-    <img src="sach1.jpg" alt="sách 1">
-    <h3>Ái Tình Nơi Đầu Lưỡi</h3>
-    <p><strong>Tác giả:</strong> Jo Kjung Ran</p>
-    <p><strong>Giá:</strong> 99.000đ</p>
-    <p>Câu chuyện đam mê dữ dội của tình yêu và gián điệp.</p>
-    <button class="add-to-cart"
-            data-id="1"
-            data-title="Ái Tình Nơi Đầu Lưỡi"
-            data-author="Jo Kjung Ran"
-            data-price="99.000đ"
-            data-img="sach1.jpg">
-      ➕ Thêm vào giỏ
-    </button>
+  <div class="book-horizontal">
+    <img src="sach1.jpg" alt="sách 1" class="book-image">
+    <div class="book-details">
+      <h3>Ái Tình Nơi Đầu Lưỡi</h3>
+      <p><strong>Tác giả:</strong> Jo Kjung Ran</p>
+      <p><strong>Giá:</strong> 99.000đ</p>
+      <p>Câu chuyện đam mê dữ dội của tình yêu và gián điệp.</p>
+      <button class="add-to-cart" data-id="1" data-title="Ái Tình Nơi Đầu Lưỡi" data-author="Jo Kjung Ran" data-price="99.000đ" data-img="sach1.jpg">➕ Thêm vào giỏ</button>
+    </div>
   </div>
 
-  <div class="book-card">
-    <img src="sach6.jpg" alt="sách 2">
-    <h3>Dưới Trời Xanh Không Có Anh Vẫn Mỉm Cười</h3>
-    <p><strong>Tác giả:</strong> Minh Lạc</p>
-    <p><strong>Giá:</strong> 89.000đ</p>
-    <p>Một câu chuyện tình yêu đầy cảm xúc và sự hy vọng.</p>
-    <button class="add-to-cart"
-            data-id="2"
-            data-title="Dưới Trời Xanh Không Có Anh Vẫn Mỉm Cười"
-            data-author="Minh Lạc"
-            data-price="89.000đ"
-            data-img="sach6.jpg">
-      ➕ Thêm vào giỏ
-    </button>
+  <div class="book-horizontal">
+    <img src="sach6.jpg" alt="sách 2" class="book-image">
+    <div class="book-details">
+      <h3>Dưới Trời Xanh Không Có Anh Vẫn Mỉm Cười</h3>
+      <p><strong>Tác giả:</strong> Minh Lạc</p>
+      <p><strong>Giá:</strong> 89.000đ</p>
+      <p>Một câu chuyện tình yêu đầy cảm xúc và sự hy vọng.</p>
+      <button class="add-to-cart" data-id="2" data-title="Dưới Trời Xanh Không Có Anh Vẫn Mỉm Cười" data-author="Minh Lạc" data-price="89.000đ" data-img="sach6.jpg">➕ Thêm vào giỏ</button>
+    </div>
   </div>
 
-  <div class="book-card">
-    <img src="sach3.jpg" alt="sách 3">
-    <h3>Phấn Hoa Lầu Xanh</h3>
-    <p><strong>Tác giả:</strong> Tào Đình</p>
-    <p><strong>Giá:</strong> 110.000đ</p>
-    <p>Câu chuyện là một chuỗi bi kịch cho số phận của một người con gái đã từng trong sáng, không vướng chút bụi trần.</p>
-    <button class="add-to-cart"
-            data-id="3"
-            data-title="Phấn Hoa Lầu Xanh"
-            data-author="Tào Đình"
-            data-price="110.000đ"
-            data-img="sach3.jpg">
-      ➕ Thêm vào giỏ
-    </button>
+  <div class="book-horizontal">
+    <img src="sach3.jpg" alt="sách 3" class="book-image">
+    <div class="book-details">
+      <h3>Phấn Hoa Lầu Xanh</h3>
+      <p><strong>Tác giả:</strong> Tào Đình</p>
+      <p><strong>Giá:</strong> 110.000đ</p>
+      <p>Chuỗi bi kịch cho số phận của một người con gái đã từng trong sáng.</p>
+      <button class="add-to-cart" data-id="3" data-title="Phấn Hoa Lầu Xanh" data-author="Tào Đình" data-price="110.000đ" data-img="sach3.jpg">➕ Thêm vào giỏ</button>
+    </div>
   </div>
 
-  <div class="book-card">
-    <img src="sach4.jpg" alt="sách 4">
-    <h3>Mẹ Ruột Nam Chính Niên Đại</h3>
-    <p><strong>Tác giả:</strong> Hà Hiểu Vân</p>
-    <p><strong>Giá:</strong> 140.000đ</p>
-    <p>Những chiến tích vĩ đại của lão thái thái này lúc còn trẻ một hơi không kể hết.</p>
-    <button class="add-to-cart"
-            data-id="4"
-            data-title="Mẹ Ruột Nam Chính Niên Đại"
-            data-author="Hà Hiểu Vân"
-            data-price="140.000đ"
-            data-img="sach4.jpg">
-      ➕ Thêm vào giỏ
-    </button>
-  </div>
-  <div class="book-card">
-    <img src="sach 7.jpg" alt="sách 5">
-    <h3>Lắng Nghe Từng Hơi Thở Của Anh</h3>
-    <p><strong>Tác giả:</strong> Lưu Đình Long</p>
-    <p><strong>Giá:</strong> 50.000đ</p>
-    <p>Một nữ tổng tài xinh đẹp có, tiền bạc không bao giờ thiếu và độ scandal với các minh tinh ảnh đế luôn nằm trên hot search với mục đích đơn giản.</p>
-    <button class="add-to-cart"
-            data-id="5"
-            data-title="Lắng Nghe Từng Hơi Thở Của Anh"
-            data-author="Lưu Đình Long"
-            data-price="50.000đ"
-            data-img="sach 7.jpg">
-      ➕ Thêm vào giỏ
-    </button>
+  <div class="book-horizontal">
+    <img src="sach4.jpg" alt="sách 4" class="book-image">
+    <div class="book-details">
+      <h3>Mẹ Ruột Nam Chính Niên Đại</h3>
+      <p><strong>Tác giả:</strong> Hà Hiểu Vân</p>
+      <p><strong>Giá:</strong> 140.000đ</p>
+      <p>Chiến tích vĩ đại của lão thái thái này lúc còn trẻ một hơi không kể hết.</p>
+      <button class="add-to-cart" data-id="4" data-title="Mẹ Ruột Nam Chính Niên Đại" data-author="Hà Hiểu Vân" data-price="140.000đ" data-img="sach4.jpg">➕ Thêm vào giỏ</button>
+    </div>
   </div>
 
-  <div class="book-card">
-    <img src="sach 8.jpg" alt="sách 6">
-    <h3>Bậc Thầy Trà Xanh Đến Huấn Luyện Quân Sự</h3>
-    <p><strong>Tác giả:</strong> Nga Tử</p>
-    <p><strong>Giá:</strong> 150.000đ</p>
-    <p>Cô gái tội nghiệp, bị cô lập, bị bạo lực vườn trường, tính tình yếu đuối, nhút nhát không dám kháng cứ.</p>
-    <button class="add-to-cart"
-            data-id="6"
-            data-title="Bậc Thầy Trà Xanh Đến Huấn Luyện Quân Sự"
-            data-author="Nga Tử"
-            data-price="150.000đ"
-            data-img="sach 8.jpg">
-      ➕ Thêm vào giỏ
-    </button>
+  <div class="book-horizontal">
+    <img src="sach 7.jpg" alt="sách 5" class="book-image">
+    <div class="book-details">
+      <h3>Lắng Nghe Từng Hơi Thở Của Anh</h3>
+      <p><strong>Tác giả:</strong> Lưu Đình Long</p>
+      <p><strong>Giá:</strong> 50.000đ</p>
+      <p>Một nữ tổng tài xinh đẹp với mục đích đơn giản.</p>
+      <button class="add-to-cart" data-id="5" data-title="Lắng Nghe Từng Hơi Thở Của Anh" data-author="Lưu Đình Long" data-price="50.000đ" data-img="sach 7.jpg">➕ Thêm vào giỏ</button>
+    </div>
   </div>
-</div>
+
+  <div class="book-horizontal">
+    <img src="sach 8.jpg" alt="sách 6" class="book-image">
+    <div class="book-details">
+      <h3>Bậc Thầy Trà Xanh Đến Huấn Luyện Quân Sự</h3>
+      <p><strong>Tác giả:</strong> Nga Tử</p>
+      <p><strong>Giá:</strong> 150.000đ</p>
+      <p>Cô gái tội nghiệp bị cô lập, bạo lực học đường, yếu đuối không dám kháng cự.</p>
+      <button class="add-to-cart" data-id="6" data-title="Bậc Thầy Trà Xanh Đến Huấn Luyện Quân Sự" data-author="Nga Tử" data-price="150.000đ" data-img="sach 8.jpg">➕ Thêm vào giỏ</button>
+    </div>
+  </div>
+
 </main>
 
 <footer>
   <div class="container">
-    <p>&copy; 2025 Book Store. All rights reserved.</p>
+    <p>&copy; 2025 Book Store.</p>
   </div>
 </footer>
 
-<script src="script.js"></script>
+<script src="js/script.js"></script>
 </body>
 </html>

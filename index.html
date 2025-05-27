@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Trang Chủ - Book Store</title>
-  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="css/style.css" />
 </head>
 <body>
   <header>
@@ -19,10 +19,21 @@
           <li class="cart-icon">
             <a href="cart.html">🛒 Giỏ hàng (<span id="cart-count">0</span>)</a>
           </li>
+
+          <!-- Hiển thị sau khi đăng nhập -->
+          <li id="user-info" style="display: none;">
+            <img id="user-avatar" src="ay.jpg" alt="avatar">
+            <span id="username"></span>
+            <button id="logout-btn">(Đăng xuất)</button>
+          </li>
+
+          <!-- Hiển thị khi chưa đăng nhập -->
+          <li id="login-link"><a href="login.html">Đăng nhập</a></li>
         </ul>
       </nav>
     </div>
   </header>
+
   <main class="container">
     <h2>Chào mừng đến với Book Store</h2>
     <p>
@@ -41,11 +52,13 @@
       <a href="books.html" class="btn">📖 Xem danh sách sách</a>
     </div>
   </main>
+
   <footer>
     <div class="container">
-      <p>&copy; 2025 Book Store. All rights reserved.</p>
+      <p>&copy; 2025 Book Store.</p>
     </div>
   </footer>
-  <script src="script.js"></script>
+
+  <script src="js/script.js"></script>
 </body>
 </html>
